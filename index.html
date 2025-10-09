@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fthnmr – For Minds & Meows</title>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 3rem 1rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p.tagline {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+    a.button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    a.button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.5;
+    }
+    footer {
+      font-size: 0.9rem;
+      color: #777;
+      margin: 3rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>fthnmr</h1>
+    <p class="tagline">Urban Grown, Biotech Honed — For Minds & Meows 🐾</p>
+    <a href="#about" class="button">About the Grower</a>
+    <a href="https://wa.me/c/23058676520" class="button">Shop Catalog 🛒</a>
+    <a href="https://facebook.com/fthnmr" class="button">Facebook</a>
+    <a href="https://instagram.com/fthnmr" class="button">Instagram</a>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      fthnmr is a small urban cultivation brand blending gourmet mushrooms, catnip, and biotech curiosity.
+      Founded and grown by Yusha — artisan grower, mycophile, and occasional psychonaut.
+    </p>
+    <p>
+      Everything is handcrafted in microbatches with care, science, and a dash of mischief.
+    </p>
+  </section>
+
+  <footer>
+    <p>Contact: <a href="mailto:meow@fthnmr.com" style="color:#ccc;">meow@fthnmr.com</a></p>
+    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
