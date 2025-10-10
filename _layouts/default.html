@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 font-sans leading-relaxed min-h-screen">
+    <header class="p-4 border-b border-neutral-800 flex justify-between items-center">
+      <h1 class="text-xl font-semibold tracking-tight">
+        <a href="{{ '/' | relative_url }}" class="hover:text-emerald-400">fthnmr</a>
+      </h1>
+      <nav class="flex gap-4 text-sm">
+        <a href="/" class="hover:text-emerald-400">Home</a>
+        <a href="/blog" class="hover:text-emerald-400">Blog</a>
+        <a href="/about" class="hover:text-emerald-400">About</a>
+      </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6">
+      {{ content }}
+    </main>
+
+    <footer class="p-6 text-center text-xs text-neutral-500">
+      &copy; {{ site.time | date: "%Y" }} fthnmr
+    </footer>
+  </body>
+</html>
