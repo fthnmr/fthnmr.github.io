@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "My First Grow"
-date: 2025-10-11
+date: 2025-10-10
 ---
 # My First Grow
 
