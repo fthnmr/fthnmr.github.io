@@ -1,84 +1,35 @@
 ---
-layout: null
-title: "Visit & Contact"
+layout: default
+title: Visit & Contact
 permalink: /contact.html
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fthnmr – Visit & Contact</title>
-
-  <!-- Tailwind CDN -->
+  <title>{{ site.title }} – Visit & Contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white font-mono min-h-screen flex flex-col">
 
   <!-- Header -->
   <header class="pt-12 pb-8 px-4 text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">fthnmr</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
     <p class="text-gray-400 text-lg sm:text-xl mb-8">Urban Grown, Biotech Honed — For Minds & Meows 🐾</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="/" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
-      <a href="/blog.html" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
+      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
+      <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Contact Form Section -->
   <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
-
-    <!-- Business Hours -->
     <section>
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Business Hours</h2>
-      <table class="w-full text-left border-collapse border border-gray-700 mx-auto">
-        <tbody>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Sunday</td>
-            <td class="py-2 px-4">Closed</td>
-          </tr>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Monday</td>
-            <td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td>
-          </tr>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Tuesday</td>
-            <td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td>
-          </tr>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Wednesday</td>
-            <td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td>
-          </tr>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Thursday</td>
-            <td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td>
-          </tr>
-          <tr class="border-b border-gray-700">
-            <td class="py-2 px-4 font-semibold">Friday</td>
-            <td class="py-2 px-4">Closed</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 font-semibold">Saturday</td>
-            <td class="py-2 px-4">Closed</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Google Map -->
-    <section>
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Find Us</h2>
-      <div class="aspect-w-16 aspect-h-9 mb-4">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!..." 
-          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section>
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Contact</h2>
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Contact Us</h2>
       <form action="mailto:meow@fthnmr.com" method="post" enctype="text/plain" class="flex flex-col gap-4 max-w-md mx-auto">
         <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 rounded text-black" required>
         <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 rounded text-black" required>
@@ -87,7 +38,6 @@ permalink: /contact.html
       </form>
       <p class="text-gray-400 mt-2 text-sm">*This form opens your email client to send a message.*</p>
     </section>
-
   </main>
 
   <!-- Footer -->
