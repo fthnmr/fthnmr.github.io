@@ -1,0 +1,16 @@
+title: "fthnmr"
+description: "Modern Mycology, Cultivation & Experiments"
+baseurl: ""
+url: "https://fthnmr.com"
+
+theme: null
+markdown: kramdown
+
+# Build settings
+include:
+  - _pages
+  - assets
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
