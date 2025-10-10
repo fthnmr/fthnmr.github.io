@@ -1,0 +1,49 @@
+---
+layout: default
+title: Blog
+subtitle: "Blog Posts 📖"
+permalink: /blog/
+---
+
+<section class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+  <!-- Blog Posts -->
+  <div class="md:col-span-3 space-y-6">
+    {% if site.posts != empty %}
+      {% for post in site.posts %}
+        <article class="border border-gray-700 rounded p-6 hover:bg-gray-800 transition">
+          <a href="{{ post.url | relative_url }}" class="text-blue-400 hover:underline text-xl font-semibold">
+            {{ post.title }}
+          </a>
+          <p class="text-gray-400 text-sm mt-1">{{ post.date | date: "%B %-d, %Y" }}</p>
+          {% if post.excerpt %}
+            <p class="mt-2 text-gray-300">{{ post.excerpt }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    {% else %}
+      <p class="text-gray-400">No blog posts yet. Stay tuned!</p>
+    {% endif %}
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="md:col-span-1 space-y-6">
+    <div class="border border-gray-700 rounded p-4">
+      <h3 class="text-lg font-semibold mb-2">Recent Posts</h3>
+      <ul class="space-y-2 text-gray-300">
+        {% assign recent_posts = site.posts | slice: 0,5 %}
+        {% for post in recent_posts %}
+          <li><a href="{{ post.url | relative_url }}" class="hover:text-blue-400">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="border border-gray-700 rounded p-4">
+      <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li><a href="{{ '/' | relative_url }}" class="hover:text-blue-400">Home</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}" class="hover:text-blue-400">About</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}" class="hover:text-blue-400">Visit & Contact</a></li>
+        <li><a href="https://wa.me/c/23058676520" class="hover:text-blue-400">Shop Catalog 🛒</a></li>
+        <li><a href="https://facebook.com/fthnmr" class="hover:text-blue-400">Facebook</a></li>
+        <li><a href="https://instagram.com/fthnmr" class="hover:text-blue-400">
