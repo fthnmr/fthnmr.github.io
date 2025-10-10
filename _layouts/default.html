@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – {{ site.title }}</title>
+
   {% include head.html %}
 </head>
 <body class="bg-black text-white font-mono min-h-screen flex flex-col">
@@ -32,7 +36,6 @@
     <p>© <span id="year"></span> {{ site.title }}. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
