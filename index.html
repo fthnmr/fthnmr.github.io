@@ -1,32 +1,28 @@
+---
+layout: default
+title: Home
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fthnmr – For Minds & Meows</title>
+  <title>{{ site.title }} – Home</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Pulse animation for open badge -->
-  <style>
-    @keyframes pulseBadge {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.8; }
-    }
-    .pulse { animation: pulseBadge 1s infinite; }
-  </style>
 </head>
 <body class="bg-black text-white font-mono min-h-screen flex flex-col">
 
   <!-- Header -->
   <header class="pt-12 pb-8 px-4 text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">fthnmr</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
     <p class="text-gray-400 text-lg sm:text-xl mb-8">Urban Grown, Biotech Honed — For Minds & Meows 🐾</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="#about" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About the Grower</a>
-      <a href="/blog.html" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
-      <a href="/contact.html" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
+      <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
+      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
       <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
       <a href="https://facebook.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
       <a href="https://instagram.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
@@ -34,98 +30,46 @@
   </header>
 
   <!-- Main Content -->
-  <main class="flex-grow px-4 max-w-3xl mx-auto text-center space-y-8">
+  <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
 
     <!-- About Section -->
     <section id="about">
       <h2 class="text-2xl sm:text-3xl font-semibold mb-4">About</h2>
-      <p>
-        fthnmr is a small urban cultivation brand blending gourmet mushrooms, catnip, and biotech curiosity.
-        Founded and grown by Yusha — artisan grower and mycophile.
-      </p>
-      <p>
-        Everything is handcrafted in microbatches with care, science, and a dash of mischief.
-      </p>
+      <p>fthnmr is a small urban cultivation brand blending gourmet mushrooms, catnip, and biotech curiosity. Founded and grown by Yusha — artisan grower and mycophile.</p>
+      <p>Everything is handcrafted in microbatches with care, science, and a dash of mischief.</p>
     </section>
 
-    <!-- Business Hours Preview -->
-    <section class="bg-gray-900 rounded-lg p-6 mx-4 sm:mx-0">
+    <!-- Business Hours -->
+    <section>
       <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Business Hours</h2>
+      <table class="w-full text-left border-collapse border border-gray-700 mx-auto">
+        <tbody>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Sunday</td><td class="py-2 px-4">Closed</td></tr>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Monday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Tuesday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Wednesday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Thursday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+          <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Friday</td><td class="py-2 px-4">Closed</td></tr>
+          <tr><td class="py-2 px-4 font-semibold">Saturday</td><td class="py-2 px-4">Closed</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <!-- Open/Closed Badge with Tooltip -->
-      <div id="open-status" class="mb-4 text-lg font-bold relative inline-block cursor-help">
-        <span id="today-hours" class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 transition-opacity duration-200 pointer-events-none z-10"></span>
+    <!-- Google Map -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Find Us</h2>
+      <div class="aspect-w-16 aspect-h-9 mb-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
-      <ul id="hours-list" class="space-y-1 text-left max-w-sm mx-auto">
-        <li><strong>Sun:</strong> Closed</li>
-        <li><strong>Mon:</strong> 10:30 – 12:30, 13:30 – 15:30</li>
-        <li><strong>Tue:</strong> 10:30 – 12:30, 13:30 – 15:30</li>
-        <li><strong>Wed:</strong> 10:30 – 12:30, 13:30 – 15:30</li>
-        <li><strong>Thu:</strong> 10:30 – 12:30, 13:30 – 15:30</li>
-        <li><strong>Fri:</strong> Closed</li>
-        <li><strong>Sat:</strong> Closed</li>
-      </ul>
-
-      <a href="/contact.html" class="inline-block mt-4 px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Full Hours & Contact</a>
-
-      <script>
-        const openStatus = document.getElementById('open-status');
-        const todayHoursEl = document.getElementById('today-hours');
-        const businessHours = [
-          null,
-          {start1:{h:10,m:30},end1:{h:12,m:30},start2:{h:13,m:30},end2:{h:15,m:30}},
-          {start1:{h:10,m:30},end1:{h:12,m:30},start2:{h:13,m:30},end2:{h:15,m:30}},
-          {start1:{h:10,m:30},end1:{h:12,m:30},start2:{h:13,m:30},end2:{h:15,m:30}},
-          {start1:{h:10,m:30},end1:{h:12,m:30},start2:{h:13,m:30},end2:{h:15,m:30}},
-          null,
-          null
-        ];
-
-        function pad(n){ return n.toString().padStart(2,'0'); }
-
-        function updateStatus(){
-          const now = new Date();
-          const day = now.getDay();
-          const hour = now.getHours();
-          const minute = now.getMinutes();
-          const hours = businessHours[day];
-
-          if(hours){
-            todayHoursEl.textContent = `${hours.start1.h}:${pad(hours.start1.m)}–${hours.end1.h}:${pad(hours.end1.m)}, ` +
-                                       `${hours.start2.h}:${pad(hours.start2.m)}–${hours.end2.h}:${pad(hours.end2.m)}`;
-            const inRange = (s,e)=>{ const n=hour*60+minute; return n>=s.h*60+s.m && n<=e.h*60+e.m; }
-            const isOpen = inRange(hours.start1,hours.end1) || inRange(hours.start2,hours.end2);
-            openStatus.innerHTML = isOpen ? 
-              `<span class="text-green-400 pulse">We are OPEN now!</span>` : 
-              `<span class="text-red-500">We are CLOSED now!</span>`;
-          } else {
-            todayHoursEl.textContent = "Closed today";
-            openStatus.innerHTML = `<span class="text-red-500">We are CLOSED now!</span>`;
-          }
-        }
-
-        // Initial run
-        updateStatus();
-
-        // Update every minute
-        setInterval(updateStatus, 60000);
-
-        // Tooltip hover
-        openStatus.addEventListener('mouseenter',()=>{todayHoursEl.style.opacity='1';});
-        openStatus.addEventListener('mouseleave',()=>{todayHoursEl.style.opacity='0';});
-      </script>
     </section>
 
   </main>
 
   <!-- Footer -->
   <footer class="text-gray-500 text-sm py-6 text-center">
-    <p>Contact: <a href="mailto:meow@fthnmr.com" class="underline text-gray-400">meow@fthnmr.com</a></p>
     <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
   </footer>
 
-  <!-- Year Script -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
