@@ -1,12 +1,22 @@
----
-layout: default
-title: "Home"
----
+<!-- Header links will be in layout now -->
 
-<div class="text-center py-24">
-  <h2 class="text-4xl font-bold mb-6">Welcome to fthnmr</h2>
-  <p class="text-neutral-400 text-lg">Exploring fungi, substrates, and science — one grow at a time.</p>
-  <a href="/blog" class="inline-block mt-8 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl">
-    Visit Blog
-  </a>
-</div>
+<!-- About Section -->
+<section id="about" class="text-center max-w-3xl mx-auto px-4">
+  {% include about-intro.html %}
+</section>
+
+<!-- Business Hours -->
+<section class="text-center max-w-3xl mx-auto px-4 mt-12">
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Business Hours</h2>
+  <table class="w-full text-left border-collapse border border-gray-700 mx-auto">
+    <tbody>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Sunday</td><td class="py-2 px-4">Closed</td></tr>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Monday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Tuesday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Wednesday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Thursday</td><td class="py-2 px-4">10:30 – 12:30, 13:30 – 15:30</td></tr>
+      <tr class="border-b border-gray-700"><td class="py-2 px-4 font-semibold">Friday</td><td class="py-2 px-4">Closed</td></tr>
+      <tr><td class="py-2 px-4 font-semibold">Saturday</td><td class="py-2 px-4">Closed</td></tr>
+    </tbody>
+  </table>
+</section>
