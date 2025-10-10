@@ -1,63 +1,35 @@
-<script>
-const now = new Date();
-const day = now.getDay(); // 0 = Sunday, 6 = Saturday
-const table = document.getElementById("hours-table");
-const rows = table.querySelectorAll("tr");
-
-rows.forEach(row => {
-  const rowDay = parseInt(row.getAttribute("data-day"));
-  if (rowDay === day) {
-    const hoursText = row.cells[1].textContent.trim().toLowerCase();
-    let open = false;
-
-    if(hoursText !== "closed") {
-      const times = hoursText.split(",");
-      const currentMinutes = now.getHours()*60 + now.getMinutes();
-
-      times.forEach(range => {
-        // Replace fancy en dash with normal dash
-        range = range.replace("–", "-").trim();
-        const [start,end] = range.split("-").map(t=>{
-          const [h,m] = t.trim().split(":").map(Number);
-          return h*60 + m;
-        });
-        if(currentMinutes >= start && currentMinutes <= end) open = true;
-      });
-    }
-
-    row.classList.add(open ? "bg-green-600" : "bg-red-600");
-    row.cells[1].textContent += open ? " – Open Now" : " – Closed Now";
-  }
-});
-</script><script>
-const now = new Date();
-const day = now.getDay(); // 0 = Sunday, 6 = Saturday
-const table = document.getElementById("hours-table");
-const rows = table.querySelectorAll("tr");
-
-rows.forEach(row => {
-  const rowDay = parseInt(row.getAttribute("data-day"));
-  if (rowDay === day) {
-    const hoursText = row.cells[1].textContent.trim().toLowerCase();
-    let open = false;
-
-    if(hoursText !== "closed") {
-      const times = hoursText.split(",");
-      const currentMinutes = now.getHours()*60 + now.getMinutes();
-
-      times.forEach(range => {
-        // Replace fancy en dash with normal dash
-        range = range.replace("–", "-").trim();
-        const [start,end] = range.split("-").map(t=>{
-          const [h,m] = t.trim().split(":").map(Number);
-          return h*60 + m;
-        });
-        if(currentMinutes >= start && currentMinutes <= end) open = true;
-      });
-    }
-
-    row.classList.add(open ? "bg-green-600" : "bg-red-600");
-    row.cells[1].textContent += open ? " – Open Now" : " – Closed Now";
-  }
-});
-</script>
+<!-- _includes/hours-table.html -->
+<div class="overflow-x-auto max-w-3xl mx-auto">
+  <table id="hours-table" class="w-full text-left border-collapse border border-gray-700 text-sm">
+    <tbody>
+      <tr data-day="0" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Sunday</td>
+        <td class="py-2 px-4">Closed</td>
+      </tr>
+      <tr data-day="1" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Monday</td>
+        <td class="py-2 px-4">10:30-12:30, 13:30-15:30</td>
+      </tr>
+      <tr data-day="2" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Tuesday</td>
+        <td class="py-2 px-4">10:30-12:30, 13:30-15:30</td>
+      </tr>
+      <tr data-day="3" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Wednesday</td>
+        <td class="py-2 px-4">10:30-12:30, 13:30-15:30</td>
+      </tr>
+      <tr data-day="4" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Thursday</td>
+        <td class="py-2 px-4">10:30-12:30, 13:30-15:30</td>
+      </tr>
+      <tr data-day="5" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Friday</td>
+        <td class="py-2 px-4">Closed</td>
+      </tr>
+      <tr data-day="6" class="border-b border-gray-700">
+        <td class="py-2 px-4 font-semibold">Saturday</td>
+        <td class="py-2 px-4">Closed</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
