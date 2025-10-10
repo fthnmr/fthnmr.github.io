@@ -31,3 +31,57 @@ title: Home
 
   <!-- Main Content -->
   <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
+
+    <!-- About Section -->
+    <section id="about">
+      {% include about-intro.html %}
+    </section>
+
+    <!-- Business Hours -->
+    <section>
+      {% include hours-table.html %}
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-gray-500 text-sm py-6 text-center">
+    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Live Business Hours
+    const now = new Date();
+    const day = now.getDay(); // Sunday = 0
+    const table = document.getElementById("hours-table");
+    if (table) {
+      const rows = table.querySelectorAll("tr");
+      rows.forEach(row => {
+        const rowDay = parseInt(row.getAttribute("data-day"));
+        if (rowDay === day) {
+          const hoursText = row.cells[1].textContent.trim();
+          let open = false;
+          if (hoursText.toLowerCase() !== "closed") {
+            const times = hoursText.split(",");
+            const currentMinutes = now.getHours()*60 + now.getMinutes();
+            times.forEach(range => {
+              range = range.replace("–","-"); // normalize dash
+              const [start,end] = range.split("-").map(t=>{
+                const [h,m] = t.trim().split(":").map(Number);
+                return h*60 + m;
+              });
+              if(currentMinutes >= start && currentMinutes <= end) open = true;
+            });
+          }
+          row.classList.add(open ? "bg-green-600" : "bg-red-600");
+          row.cells[1].textContent += open ? " – Open Now" : " – Closed Now";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
