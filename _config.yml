@@ -3,7 +3,7 @@ description: "Modern Mycology, Cultivation & Experiments"
 baseurl: ""
 url: "https://fthnmr.com"
 
-theme: jekyll-theme-hacker
+theme: jekyll-theme-cayman
 markdown: kramdown
 
 plugins:
