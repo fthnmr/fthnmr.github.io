@@ -15,10 +15,13 @@
   <!-- Header -->
   <header class="pt-12 pb-8 px-4 text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
-    <p class="text-gray-400 text-lg sm:text-xl mb-8">Urban Grown, Biotech Honed — For Minds & Meows 🐾</p>
+    {% if page.subtitle %}
+      <p class="text-gray-400 text-lg sm:text-xl mb-8">{{ page.subtitle }}</p>
+    {% endif %}
     <div class="flex flex-wrap justify-center gap-4">
       <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
       <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/about.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
       <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
       <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
       <a href="https://facebook.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
@@ -36,6 +39,7 @@
     <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
