@@ -1,0 +1,61 @@
+---
+layout: default
+title: Blog Posts
+permalink: /blog.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }} – Blog</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-mono min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="pt-12 pb-8 px-4 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
+    <p class="text-gray-400 text-lg sm:text-xl mb-8">Blog Posts 📖</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
+      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
+    </div>
+  </header>
+
+  <!-- Blog Posts List -->
+  <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
+    {% if site.posts != empty %}
+      <ul class="space-y-4">
+        {% for post in site.posts %}
+          <li class="border border-gray-700 rounded p-4 hover:bg-gray-800 transition">
+            <a href="{{ post.url | relative_url }}" class="text-blue-400 hover:underline text-lg sm:text-xl font-semibold">
+              {{ post.title }}
+            </a>
+            <p class="text-gray-400 text-sm mt-1">{{ post.date | date: "%B %-d, %Y" }}</p>
+            {% if post.excerpt %}
+              <p class="mt-2 text-gray-300">{{ post.excerpt }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-gray-400">No blog posts yet. Stay tuned!</p>
+    {% endif %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-gray-500 text-sm py-6 text-center">
+    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
