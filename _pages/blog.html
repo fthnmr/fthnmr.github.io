@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog Posts
+subtitle: "Blog Posts 📖"
 permalink: /blog.html
 ---
 
@@ -16,16 +17,6 @@ permalink: /blog.html
 </head>
 <body class="bg-black text-white font-mono min-h-screen flex flex-col">
 
-  <!-- Header -->
-  <header class="pt-12 pb-8 px-4 text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
-    <p class="text-gray-400 text-lg sm:text-xl mb-8">Blog Posts 📖</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
-      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
-      <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
-    </div>
-  </header>
 
   <!-- Main Content with Sidebar -->
   <main class="flex-grow px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-white">
