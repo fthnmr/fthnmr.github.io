@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Testing Dark Mode"
-date: 2025-10-12
+date: 2025-10-10
 ---
 # Dark Mode Test
 
