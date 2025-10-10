@@ -1,48 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="transition-colors duration-300">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} – {{ site.title }}</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – {{ site.title }}</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    {% include head.html %}
-  </head>
-  <body class="bg-neutral-950 text-neutral-100 font-sans leading-relaxed min-h-screen">
+  {% include head.html %}
+</head>
+<body class="bg-black text-white font-mono min-h-screen flex flex-col">
 
-    <!-- Header -->
-    <header class="p-4 border-b border-neutral-800 flex justify-between items-center">
-      <h1 class="text-xl font-semibold tracking-tight">
-        <a href="{{ '/' | relative_url }}" class="hover:text-emerald-400">fthnmr</a>
-      </h1>
-      <div class="flex items-center gap-4">
-        <nav class="flex gap-4 text-sm">
-          <a href="{{ '/' | relative_url }}" class="hover:text-emerald-400">Home</a>
-          <a href="{{ '/blog' | relative_url }}" class="hover:text-emerald-400">Blog</a>
-          <a href="{{ '/about' | relative_url }}" class="hover:text-emerald-400">About</a>
-        </nav>
-        <button id="theme-toggle"
-          class="rounded-full border border-neutral-700 p-2 hover:bg-neutral-800 transition"
-          title="Toggle Dark Mode">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-            fill="currentColor" class="w-5 h-5 text-neutral-300 dark:text-neutral-100">
-            <path d="M12 3a9 9 0 0 0 0 18 9 9 0 0 0 0-18Zm0-1a10 10 0 1 1 0 20A10 10 0 0 1 12 2Z"/>
-          </svg>
-        </button>
-      </div>
-    </header>
+  <!-- Header -->
+  <header class="pt-12 pb-8 px-4 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{{ site.title }}</h1>
+    <p class="text-gray-400 text-lg sm:text-xl mb-8">Urban Grown, Biotech Honed — For Minds & Meows 🐾</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
+      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
+      <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
+      <a href="https://facebook.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
+      <a href="https://instagram.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto p-6">
-      {{ content }}
-    </main>
+  <!-- Main Content -->
+  <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
+    {{ content }}
+  </main>
 
-    <!-- Footer -->
-    <footer class="p-6 text-center text-xs text-neutral-500">
-      &copy; {{ site.time | date: "%Y" }} fthnmr
-    </footer>
+  <!-- Footer -->
+  <footer class="text-gray-500 text-sm py-6 text-center">
+    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+  </footer>
 
-  </body>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
 </html>
