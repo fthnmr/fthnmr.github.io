@@ -1,0 +1,10 @@
+/* Custom overrides, colors, dark mode, etc. */
+html {
+  @apply bg-neutral-950 text-neutral-100 transition-colors duration-300;
+}
+
+html:not(.dark) {
+  @apply bg-white text-neutral-900;
+}
+
+/* Add any extra site-specific custom CSS below */
