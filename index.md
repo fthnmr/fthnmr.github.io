@@ -3,5 +3,5 @@
   {% include about-intro.html %}
 </section>
 <section class="text-center max-w-3xl mx-auto px-4 mt-12">
-  {% include hours-table.html %}
+  {% include business-hours.html %}
 </section>
