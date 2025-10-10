@@ -1,34 +1,24 @@
 ---
 layout: default
 title: Visit & Contact
-permalink: /contact.html
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }} – Visit & Contact</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-black text-white font-mono min-h-screen flex flex-col">
+<section class="max-w-3xl mx-auto px-4 text-center space-y-6">
 
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Contact Us</h2>
 
-  <!-- Contact Form Section -->
-  <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
-    <section>
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Contact Us</h2>
-      <form action="mailto:meow@fthnmr.com" method="post" enctype="text/plain" class="flex flex-col gap-4 max-w-md mx-auto">
-        <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 rounded text-black" required>
-        <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 rounded text-black" required>
-        <textarea name="message" rows="4" placeholder="Your Message" class="px-4 py-2 rounded text-black" required></textarea>
-        <button type="submit" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Send</button>
-      </form>
-      <p class="text-gray-400 mt-2 text-sm">*This form opens your email client to send a message.*</p>
-    </section>
-  </main>
+  <form action="mailto:meow@fthnmr.com" method="post" enctype="text/plain" class="flex flex-col gap-4 max-w-md mx-auto">
+    <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 rounded text-black" required>
+    <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 rounded text-black" required>
+    <textarea name="message" rows="4" placeholder="Your Message" class="px-4 py-2 rounded text-black" required></textarea>
+    <button type="submit" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Send</button>
+  </form>
 
+  <p class="text-gray-400 mt-2 text-sm">*This form opens your email client to send a message.*</p>
 
-</body>
-</html>
+  <!-- Optional: Business Hours -->
+  <section class="text-center max-w-3xl mx-auto px-4 mt-12">
+    {% include business-hours.html %}
+  </section>
+
+</section>
