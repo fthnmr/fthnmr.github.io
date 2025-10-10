@@ -3,8 +3,11 @@
 <title>{{ page.title | default: site.title }}</title>
 <meta name="description" content="{{ page.description | default: site.description }}">
 
-<!-- ✅ Use your locally built Tailwind CSS -->
-<link rel="stylesheet" href="{{ '/assets/css/tailwind.min.css' | relative_url }}">
+<!-- Tailwind CSS via CDN (works without local build) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Optional custom CSS overrides -->
+<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url }}">
 
 <!-- Optional custom JS (like theme toggle) -->
 <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
