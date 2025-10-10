@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Custom overrides, colors, dark mode, etc. */
 html {
   @apply bg-neutral-950 text-neutral-100 transition-colors duration-300;
