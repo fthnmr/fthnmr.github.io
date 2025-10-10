@@ -20,7 +20,7 @@
     {% endif %}
     <div class="flex flex-wrap justify-center gap-4">
       <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
-      <a href="{{ '/blog.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/blog/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
       <a href="{{ '/about.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
       <a href="{{ '/contact.html' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
       <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
@@ -30,19 +30,18 @@
   </header>
 
   <!-- Main Content -->
-  <main class="flex-grow px-4 max-w-3xl mx-auto space-y-8 text-center">
+  <main class="flex-grow px-4 max-w-6xl mx-auto space-y-8">
     {{ content }}
   </main>
 
   <!-- Footer -->
   <footer class="text-gray-500 text-sm py-6 text-center">
-    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+    <p>© <span id="year"></span> {{ site.title }}. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
