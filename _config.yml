@@ -5,7 +5,7 @@ url: "https://fthnmr.com"
 baseurl: "" # leave empty for root deployment
 
 # Build settings
-theme: jekyll-theme-hacker
+theme: null
 markdown: kramdown
 
 # Plugins
