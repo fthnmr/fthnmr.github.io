@@ -24,32 +24,26 @@
     {% endif %}
 
     <!-- Navigation / Quick Links -->
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="flex flex-wrap justify-center gap-4 mb-4">
       <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
-      <a href="{{ '/blog/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
-      <a href="{{ '/about/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
+      <a href="{{ '/blog' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="{{ '/about' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
+      <a href="{{ '/contact' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Business Hours ⏰</a>
 
-      <!-- WhatsApp Catalog -->
-      <a href="https://wa.me/c/23058676520" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Product Catalog 🛒</a>
+      <!-- Insider (Coming Soon) -->
+      <button id="insider-btn" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">
+        Join Insider ⭐
+      </button>
+    </div>
 
-      <!-- WhatsApp Availability -->
-      <a href="https://whatsapp.com/channel/0029Vb4tcrU2v1InZ3RIcD0b" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Product Availability 📦</a>
-
-      <!-- Fourthwall Shop -->
-      <a href="https://swag.fthnmr.com" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Merch Shop 🛍️</a>
-
-      <!-- WhatsApp Quick Message -->
-      <a href="https://wa.me/23058676520?text=Hi%20FTHNMR!" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Message Us 💬</a>
-
-      <!-- Business Hours -->
-      <a href="{{ '/contact/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Business Hours ⏰</a>
-
-      <!-- Google Map Directions -->
-      <a href="https://maps.app.goo.gl/RnxQ22nL4J95BTNE8" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Find Us 📍</a>
-
-      <!-- Socials -->
-      <a href="https://facebook.com/fthnmr" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
-      <a href="https://instagram.com/fthnmr" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
+    <!-- Socials -->
+    <div class="flex justify-center gap-4">
+      <a href="https://facebook.com/fthnmr" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
+      <a href="https://instagram.com/fthnmr" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
+      <a href="https://wa.me/c/23058676520" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Product Catalog 🛒</a>
+      <a href="https://whatsapp.com/channel/0029Vb4tcrU2v1InZ3RIcD0b" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Availability 📦</a>
+      <a href="https://swag.fthnmr.com" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Merch Shop 🛍️</a>
+      <a href="https://maps.app.goo.gl/RnxQ22nL4J95BTNE8" target="_blank" class="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition">Find Us 📍</a>
     </div>
   </header>
 
@@ -66,6 +60,26 @@
   <script>
     // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Insider popup
+    document.getElementById('insider-btn').addEventListener('click', () => {
+      alert("Join Insider (Coming Soon):\n- First dibs on new mushroom varieties\n- Access to product availability channel\n- 5% discount & a privilege QR card\n- High-res pics & research-only content");
+    });
+
+    // Track newcomers via localStorage
+    (function() {
+      const newcomerKey = 'fthnmr_newcomer';
+      const firstVisit = !localStorage.getItem(newcomerKey);
+      if (firstVisit) localStorage.setItem(newcomerKey, Date.now());
+
+      // Push to GTM dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'visitorStatus',
+        'newcomer': firstVisit,
+        'firstVisit': localStorage.getItem(newcomerKey)
+      });
+    })();
   </script>
 
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
