@@ -3,12 +3,14 @@ layout: default
 title: Home
 ---
 
-<!-- About Section -->
-<section id="about" class="text-center max-w-3xl mx-auto px-4">
-  {% include about-intro.html %}
+<section id="about" class="max-w-3xl mx-auto px-4 py-16 text-center">
+  <div class="bg-white shadow-md rounded-2xl p-8">
+    {% include about-intro.html %}
+  </div>
 </section>
 
-<!-- Business Hours -->
-<section class="text-center max-w-3xl mx-auto px-4 mt-12">
-  {% include business-hours.html %}
-</section>
+<section id="hours" class="max-w-3xl mx-auto px-4 mt-12 text-center">
+  <div class="bg-white shadow-md rounded-2xl p-8">
+    {% include business-hours.html %}
+  </div>
+</section
