@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
   <title>{{ page.title }} – {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
 
   {% include head.html %}
 </head>
@@ -22,14 +23,33 @@
       <p class="text-gray-400 text-lg sm:text-xl mb-8">{{ page.subtitle }}</p>
     {% endif %}
 
+    <!-- Navigation / Quick Links -->
     <div class="flex flex-wrap justify-center gap-4">
       <a href="{{ '/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
       <a href="{{ '/blog/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
       <a href="{{ '/about/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
-      <a href="{{ '/contact/' | relative_url }}" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
-      <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
-      <a href="https://facebook.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
-      <a href="https://instagram.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
+
+      <!-- WhatsApp Catalog -->
+      <a href="https://wa.me/c/23058676520" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Product Catalog 🛒</a>
+
+      <!-- WhatsApp Availability -->
+      <a href="https://whatsapp.com/channel/0029Vb4tcrU2v1InZ3RIcD0b" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Product Availability 📦</a>
+
+      <!-- Fourthwall Shop -->
+      <a href="https://swag.fthnmr.com" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Merch Shop 🛍️</a>
+
+      <!-- WhatsApp Quick Message -->
+      <a href="https://wa.me/23058676520?text=Hi%20FTHNMR!" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Message Us 💬</a>
+
+      <!-- Business Hours -->
+      <a href="https://when.fthnmr.com" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Business Hours ⏰</a>
+
+      <!-- Google Map Directions -->
+      <a href="https://maps.app.goo.gl/RnxQ22nL4J95BTNE8" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Find Us 📍</a>
+
+      <!-- Socials -->
+      <a href="https://facebook.com/fthnmr" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
+      <a href="https://instagram.com/fthnmr" target="_blank" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
     </div>
   </header>
 
