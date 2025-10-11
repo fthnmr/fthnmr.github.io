@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to fthnmr – fthnmr</title>
+
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
+<title>Welcome to fthnmr</title>
+<meta name="description" content="Modern Mycology, Cultivation & Experiments">
+
+<!-- ✅ Local Tailwind minified build -->
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+
+<!-- ✅ Optional custom CSS overrides -->
+<link rel="stylesheet" href="/assets/css/custom.css">
+
+<!-- ✅ Optional custom JS (like theme toggle, etc.) -->
+<script src="/assets/js/theme-toggle.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</head>
+<body class="bg-black text-white font-mono min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="pt-12 pb-8 px-4 text-center relative">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">fthnmr</h1>
+
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="absolute top-4 right-4 px-4 py-2 border rounded hover:bg-gray-700">
+      Toggle Theme
+    </button>
+
+    
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Home</a>
+      <a href="/blog/" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Blog Posts 📖</a>
+      <a href="/about.html" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">About</a>
+      <a href="/contact.html" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Visit & Contact ⏰</a>
+      <a href="https://wa.me/c/23058676520" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Shop Catalog 🛒</a>
+      <a href="https://facebook.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Facebook</a>
+      <a href="https://instagram.com/fthnmr" class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition">Instagram</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow px-4 max-w-6xl mx-auto space-y-8">
+    <h1 id="welcome-to-fthnmr">Welcome to fthnmr</h1>
+
+<p>This is your first test post. Tailwind CSS and dark mode should be working.</p>
+
+<p>Enjoy building your mushroom kingdom!</p>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-gray-500 text-sm py-6 text-center">
+    <p>© <span id="year"></span> fthnmr. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="/assets/js/theme-toggle.js" defer></script>
+</body>
+</html>
