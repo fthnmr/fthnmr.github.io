@@ -13,4 +13,4 @@ title: Home
   <div class="bg-white shadow-md rounded-2xl p-8">
     {% include business-hours.html %}
   </div>
-</section
+</section>
